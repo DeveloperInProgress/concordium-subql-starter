@@ -23,6 +23,7 @@
   "dependencies": {
     "@subql/common": "latest",
     "@subql/validator": "latest",
+    "@concordium/node-sdk": "latest",
     "assert": "^2.0.0"
   },
   "devDependencies": {

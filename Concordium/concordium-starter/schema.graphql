@@ -3,29 +3,26 @@
 # https://academy.subquery.network/build/graphql.html#indexing-by-non-primary-key-field
 
 type Transfer @entity {
-  """
-  id field is always required and must look like this
-  """
   id: ID!
-  """
-  The block of the transfer
-  """
-  block: Int!
-  """
-  The date of the transfer
-  """
+  block: BigInt!
   date: Date!
-  """
-  The account that transfers are made from
-  """
   from: String!
-  """
-  The account that transfers are made to
-  """
   to: String!
-  """
-  Value that is transferred
-  """
   value: BigInt!
+}
+
+type Updated @entity {
+  id: ID!
+  block: BigInt!
+  txHash: String!
+  address: String!
+  instigator: String!
+}
+
+type BlockAccrueReward @entity {
+  id: ID!
+  block: BigInt!
+  baker: BigInt!
+  bakerReward: BigInt!
 }
 

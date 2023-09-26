@@ -37,8 +37,13 @@ dataSources:
           kind: concordium/TransactionHandler
           filter:
             type: 'accountTransaction'
-            transactionType: 'transfer'
+            values:
+              transactionType: 'transfer'
         - handler: handleTransactionEvent
           kind: concordium/TransactionEventHandler
+          filter:
+            type: 'Updated'
         - handler: handleSpecialEvent
           kind: concordium/SpecialEventHandler
+          filter:
+            type: 'blockAccrueReward'
